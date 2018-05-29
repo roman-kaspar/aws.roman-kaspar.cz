@@ -1,0 +1,18 @@
+body {
+  font-family: verdana;
+}
+
+.img-fit {
+  max-width: 100%;
+  height: auto;
+}
+
+.refresh {
+  padding: 7px 15px 7px 15px;
+  background: #ccc;
+}
+
+.code-output {
+  margin-bottom: 10px;
+  background: #f9f9f9;
+}

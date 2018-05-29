@@ -1,0 +1,10 @@
+/var/log/api-service/service.log
+{
+  create roman roman
+  daily
+  compress
+  delaycompress
+  copytruncate
+  missingok
+  rotate 28
+}

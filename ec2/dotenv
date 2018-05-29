@@ -1,0 +1,6 @@
+APP_NAME="api-service"
+DB_URL="postgres://*****:*****@testing-postgresql.cdtugivyevt5.eu-central-1.rds.amazonaws.com:5432/testing"
+LOG_LEVEL="info"
+PORT=80
+RESPONSE_FILE="./response.json"
+EC2_RES_IDX=4

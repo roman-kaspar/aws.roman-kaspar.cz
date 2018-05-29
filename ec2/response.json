@@ -1,0 +1,80 @@
+{
+  "1": {
+    "type": "cloud front",
+    "domain-name": "d2smt0e3gqxdwt.cloudfront.net",
+    "dns-cname": "aws.roman-kaspar.cz",
+    "origin": "aws.roman-kaspar.cz.s3.amazonaws.com"
+  },
+  "2": {
+    "type": "s3",
+    "bucket-name": "aws.roman-kaspar.cz",
+    "public": false,
+    "static-website-hosting": true,
+    "dns-name": "http://aws.roman-kaspar.cz.s3-website.eu-central-1.amazonaws.com/"
+  },
+  "3": {
+    "type": "elastic load balancer",
+    "name": "api-service-load-balancer",
+    "dns-name": "http://api-service-load-balancer-1275305978.eu-central-1.elb.amazonaws.com/",
+    "target": {
+      "name": "api-service",
+      "port": 80,
+      "protocol": "http",
+      "targets": [ "ref [4]" ]
+    }
+  },
+  "4": {
+    "type": "ec2",
+    "instance-name": "api-service",
+    "storage": "10 GiB"
+  },
+  "M": {
+    "type": "meta data service",
+    "url": "http://169.254.169.254/latest/meta-data/"
+  },
+  "5": {
+    "type": "rds",
+    "engine": "postgresql",
+    "version": "9.6.8",
+    "public": false,
+    "instance-type": "db.t2.micro",
+    "instance-name": "testing-postgresql",
+    "instance-port": 5432,
+    "db-name": "testing",
+    "dns-name": "testing-postgresql.cdtugivyevt5.eu-central-1.rds.amazonaws.com",
+    "storage": "20 GiB"
+  },
+  "6": {
+    "type": "api gateway",
+    "name": "testing-lambda",
+    "resources": {
+      "end-point": "/testing-lambda",
+      "methods": [ "GET" ],
+      "type": "lambda_proxy",
+      "target-lambda": "testing-lambda (ref [7])",
+      "stages": [
+        { "production": "https://a2j0bg5k9f.execute-api.eu-central-1.amazonaws.com/production/testing-lambda" }
+      ]
+    }
+  },
+  "7": {
+    "type": "lambda",
+    "name": "testing-lambda",
+    "run-time": "nodejs-8.10",
+    "memory": "128 MB",
+    "timeout": "30 sec",
+    "concurrency": 1000
+  },
+  "8": {
+    "type": "dynamo db",
+    "tables": [
+      {
+        "name": "invocations",
+        "read-capacity": 5,
+        "write-capacity": 5,
+        "columns": [ "id", "count" ],
+        "partition-key": "id"
+      }
+    ]
+  }
+}
