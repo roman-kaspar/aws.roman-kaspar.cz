@@ -1,7 +1,3 @@
-[![Dependency Status](https://img.shields.io/david/roman-kaspar/aws.roman-kaspar.cz.svg)](https://david-dm.org/roman-kaspar/aws.roman-kaspar.cz)
-[![devDependency Status](https://img.shields.io/david/dev/roman-kaspar/aws.roman-kaspar.cz.svg)](https://david-dm.org/roman-kaspar/aws.roman-kaspar.cz?type=dev)
-[![Known Vulnerabilities](https://snyk.io/test/github/roman-kaspar/aws.roman-kaspar.cz/badge.svg)](https://snyk.io/test/github/roman-kaspar/aws.roman-kaspar.cz)
-
 # aws.roman-kaspar.cz
 
 Mini project to get familiar with AWS infrastructure, configuration, and DNS settings.
