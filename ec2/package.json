@@ -5,6 +5,6 @@
     "pg-promise": "8.5.4",
     "squel": "5.12.2",
     "superagent": "4.1.0",
-    "winston": "3.1.0"
+    "winston": "3.2.1"
   }
 }
