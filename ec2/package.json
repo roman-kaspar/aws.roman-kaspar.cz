@@ -3,7 +3,7 @@
     "dotenv": "6.2.0",
     "pg": "7.7.1",
     "pg-promise": "8.5.4",
-    "squel": "5.12.2",
+    "squel": "5.13.0",
     "superagent": "4.1.0",
     "winston": "3.1.0"
   }
