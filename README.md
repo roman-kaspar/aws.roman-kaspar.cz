@@ -2,6 +2,8 @@
 
 Mini project to get familiar with AWS infrastructure, configuration, and DNS settings.
 
+### THIS PROJECT IS NO LONGER MAINTAINED.
+
 ## About
 
 I created this project when learning about and playing with AWS platform.
